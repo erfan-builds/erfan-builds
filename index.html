@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erfan Bagher Gheibi | Cognitive AI Specialist</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --accent: #7dd3fc;
+            --accent-dark: #0ea5e9;
+            --text: #f1f5f9;
+            --text-secondary: #cbd5e1;
+            --card: #1e293b;
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+            background-attachment: fixed;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Header & Navigation */
+        header {
+            padding: 2rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(125, 211, 252, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(to right, var(--accent), var(--accent-dark));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 8rem 0 6rem;
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            min-height: 90vh;
+        }
+
+        .hero-content {
+            flex: 1;
+        }
+
+        .hero h4 {
+            color: var(--accent);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to right, #fff, var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .btn {
+            padding: 0.9rem 2.2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--primary);
+            border: 2px solid var(--accent);
+        }
+
+        .btn-primary:hover {
+            background: transparent;
+            color: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(125, 211, 252, 0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--accent);
+            border: 2px solid var(--accent);
+        }
+
+        .btn-secondary:hover {
+            background: var(--accent);
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .hero-visual {
+            flex: 1;
+            position: relative;
+        }
+
+        .brain-animation {
+            width: 100%;
+            max-width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(125, 211, 252, 0.1) 0%, rgba(125, 211, 252, 0) 70%);
+            border-radius: 50%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: pulse 8s infinite alternate;
+        }
+
+        .brain-icon {
+            font-size: 18rem;
+            color: var(--accent);
+            opacity: 0.3;
+            position: absolute;
+        }
+
+        .iq-highlight {
+            position: absolute;
+            background: rgba(15, 23, 42, 0.9);
+            border: 2px solid var(--accent);
+            border-radius: 20px;
+            padding: 1.2rem;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .iq-highlight.top {
+            top: 10%;
+            right: 0;
+            width: 180px;
+        }
+
+        .iq-highlight.bottom {
+            bottom: 10%;
+            left: 0;
+            width: 220px;
+        }
+
+        .iq-highlight h3 {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .iq-highlight p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* Sections */
+        section {
+            padding: 6rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, var(--accent), #fff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+        .section-title .divider {
+            height: 4px;
+            width: 80px;
+            background: var(--accent);
+            margin: 0 auto;
+            border-radius: 10px;
+        }
+
+        /* Cards */
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--card);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: var(--transition);
+            border: 1px solid rgba(125, 211, 252, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(125, 211, 252, 0.15);
+            border-color: rgba(125, 211, 252, 0.3);
+        }
+
+        .card-header {
+            padding: 1.8rem 1.8rem 0.5rem;
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 1.2rem;
+        }
+
+        .card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .card-content {
+            padding: 0 1.8rem 1.8rem;
+        }
+
+        .card-item {
+            padding: 1.2rem 0;
+            border-bottom: 1px solid rgba(125, 211, 252, 0.1);
+        }
+
+        .card-item:last-child {
+            border-bottom: none;
+        }
+
+        .card-item h4 {
+            color: var(--accent);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-item .organization {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .card-item p {
+            font-size: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            background: rgba(125, 211, 252, 0.1);
+            color: var(--accent);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            margin-top: 0.8rem;
+            font-weight: 500;
+        }
+
+        /* Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: var(--card);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid rgba(125, 211, 252, 0.1);
+        }
+
+        .skill-category h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .skill-category h3 i {
+            font-size: 1.8rem;
+        }
+
+        .skill-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .skill-item {
+            background: rgba(125, 211, 252, 0.08);
+            color: var(--accent);
+            padding: 0.7rem 1.2rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .skill-item:hover {
+            background: var(--accent);
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(15, 23, 42, 0.8);
+            padding: 3rem 0;
+            text-align: center;
+            border-top: 1px solid rgba(125, 211, 252, 0.1);
+            margin-top: 4rem;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-links a {
+            color: var(--text);
+            font-size: 1.8rem;
+            transition: var(--transition);
+        }
+
+        .contact-links a:hover {
+            color: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        /* Animations */
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0px rgba(125, 211, 252, 0.2);
+            }
+            100% {
+                box-shadow: 0 0 0 70px rgba(125, 211, 252, 0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 6rem 0 4rem;
+            }
+            
+            .hero-content {
+                margin-bottom: 3rem;
+            }
+            
+            .hero-btns {
+                justify-content: center;
+            }
+            
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-title h2 {
+                font-size: 2.3rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .iq-highlight {
+                transform: scale(0.9);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">EBG</div>
+                <div class="nav-links">
+                    <a href="#cognitive">Cognitive</a>
+                    <a href="#technical">Technical</a>
+                    <a href="#scientific">Scientific</a>
+                    <a href="#skills">Skills</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h4>COGNITIVE AI SPECIALIST</h4>
+                <h1>Erfan Bagher Gheibi</h1>
+                <p>Elite problem-solver combining top-tier cognitive abilities with advanced AI expertise to create innovative technological solutions.</p>
+                <div class="hero-btns">
+                    <a href="#technical" class="btn btn-primary">View Credentials</a>
+                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="brain-animation">
+                    <i class="fas fa-brain brain-icon"></i>
+                    <div class="iq-highlight top">
+                        <h3>145+</h3>
+                        <p>Verified IQ Score</p>
+                    </div>
+                    <div class="iq-highlight bottom">
+                        <h3>Top 0.1%</h3>
+                        <p>Global Cognitive Performance</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cognitive Excellence Section -->
+    <section id="cognitive">
+        <div class="container">
+            <div class="section-title">
+                <h2>Cognitive Excellence</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="cards-container">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <h3>Mensa International</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-item">
+                            <h4>Verified Member</h4>
+                            <p>Inducted member with a verified IQ score of 145+, placing in the top 0.1% of global population.</p>
+                            <span class="badge">Top 0.1% Worldwide</span>
+                        </div>
+                        <div class="card-item">
+                            <h4>Analytical Reasoning</h4>
+                            <p>Recognized for exceptional problem-solving abilities and capacity for processing complex information.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-puzzle-piece"></i>
+                        </div>
+                        <h3>Raven's Progressive Matrices</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-item">
+                            <h4>Top Percentile Performance</h4>
+                            <p>Demonstrated elite non-verbal abstract reasoning and pattern recognition abilities.</p>
+                            <span class="badge">99.9th Percentile</span>
+                        </div>
+                        <div class="card-item">
+                            <h4>Cognitive Strengths</h4>
+                            <p>Exceptional performance in high-complexity problems requiring novel solutions and strategic thinking.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Mastery Section -->
+    <section id="technical">
+        <div class="container">
+            <div class="section-title">
+                <h2>Technical Mastery</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="cards-container">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3>AI & Machine Learning</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-item">
+                            <h4>AI Development with Python</h4>
+                            <span class="organization">Sharif University of Technology</span>
+                            <p>Building deep learning models and deployment pipelines</p>
+                            <span class="badge">Completion 2025</span>
+                        </div>
+                        <div class="card-item">
+                            <h4>Artificial Intelligence Fundamentals</h4>
+                            <span class="organization">Sharif University of Technology</span>
+                            <p>Neural networks and ML algorithm implementation</p>
+                            <span class="badge">2024</span>
+                        </div>
+                        <div class="card-item">
+                            <h4>AI Technologies Intensive</h4>
+                            <span class="organization">Techno-Sharif</span>
+                            <p>Machine learning workflows and neural architecture design</p>
+                            <span class="badge">2025</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-microchip"></i>
+                        </div>
+                        <h3>Emerging Technologies</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-item">
+                            <h4>IoT & AI Specialization</h4>
+                            <span class="organization">Sharif University of Technology</span>
+                            <p>Edge computing systems and sensor network integration</p>
+                            <span class="badge">Completion 2025</span>
+                        </div>
+                        <div class="card-item">
+                            <h4>Emerging Tech & Future Jobs</h4>
+                            <span class="organization">Techno-Sharif</span>
+                            <p>Technological transformation strategies</p>
+                            <span class="badge">2024</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scientific Recognition Section -->
+    <section id="scientific">
+        <div class="container">
+            <div class="section-title">
+                <h2>Scientific Recognition</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="cards-container">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h3>Brain Bee 2024</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-item">
+                            <h4>International Finalist</h4>
+                            <span class="organization">Iran National Neuroscience Association</span>
+                            <p>Competed in the international neuroscience championship</p>
+                            <span class="badge">Global Competition</span>
+                        </div>
+                        <div class="card-item">
+                            <h4>Neuroscience Expertise</h4>
+                            <p>Mastery of neurophysiology, brain anatomy, and cognitive function</p>
+                        </div>
+                        <div class="card-item">
+                            <h4>Cognitive Research</h4>
+                            <p>Applied neuroscience knowledge to understand intelligence mechanisms</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <div class="section-title">
+                <h2>Core Competencies</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3><i class="fas fa-brain"></i> Cognitive Skills</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">Analytical Reasoning</div>
+                        <div class="skill-item">Pattern Recognition</div>
+                        <div class="skill-item">Complex Problem Solving</div>
+                        <div class="skill-item">Strategic Thinking</div>
+                        <div class="skill-item">Abstract Reasoning</div>
+                        <div class="skill-item">Cognitive Modeling</div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-laptop-code"></i> Technical Skills</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">Python</div>
+                        <div class="skill-item">Machine Learning</div>
+                        <div class="skill-item">Neural Networks</div>
+                        <div class="skill-item">AI Development</div>
+                        <div class="skill-item">Data Architecture</div>
+                        <div class="skill-item">IoT Systems</div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-rocket"></i> Specialized Knowledge</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">Edge AI Systems</div>
+                        <div class="skill-item">Neurophysiology</div>
+                        <div class="skill-item">Cognitive Science</div>
+                        <div class="skill-item">Algorithm Design</div>
+                        <div class="skill-item">Sensor Networks</div>
+                        <div class="skill-item">Embedded Systems</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="contact-links">
+                <a href="mailto:erfan@example.com"><i class="fas fa-envelope"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p class="copyright">© 2025 Erfan Bagher Gheibi. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Animation on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('.card, .skill-category').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+            
+            if (el.getBoundingClientRect().top < window.innerHeight) {
+                el.style.opacity = '1';
+                el.style.transform = 'translateY(0)';
+            }
+        });
+
+        window.addEventListener('scroll', () => {
+            document.querySelectorAll('.card, .skill-category').forEach(el => {
+                if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
